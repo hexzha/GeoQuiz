@@ -7,4 +7,4 @@ This is my first android app. I use Android Studio to create this app. Within th
 
 I am following lessons from "Android Programming: The Big Nerd Ranch Guide" 2nd edition by Bill Phillips, Chris Stewart, Brian Hardy and Kristin Marsicano. 
 
-Website: https://www.bignerdranch.com/books/android-programming/
+BigNerdRanch Website: https://www.bignerdranch.com/books/android-programming/
