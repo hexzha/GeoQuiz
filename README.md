@@ -1,7 +1,7 @@
 # GeoQuiz
 ### Description
 
-GeoQuiz is a simple android app that displays a series of geographical True/False questions. Using true or false buttons, a toast will appear to indicate whether the user answered correctly.
+GeoQuiz is a simple android app that displays a series of geographical True/False questions. A toast will indicate whether the user answered correctly.
 
 This is my first android app. I used Android Studio to create this app. Within the app, I explore fundementals of android projects, layouts, and explicit intents. 
 
