@@ -3,11 +3,16 @@ package com.bignerdranch.android.geoquiz;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class CheatActivity extends Activity {
+    private static final String TAG = "CheatActivity";
+    private static final String ANSWER_VIEW = "answer_view";
+
+
     public static final String EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geoquiz.answer_is_true";
     public static final String EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown";
 
@@ -16,7 +21,7 @@ public class CheatActivity extends Activity {
     private TextView mAnswerTextView;
     private Button mShowAnswer;
 
-    private void setAnswerShownResults(boolean isAnswerShown){
+    private void setAnswerShownResults(boolean isAnswerShown) {
         Intent data = new Intent();
         data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
         setResult(RESULT_OK, data);
@@ -45,5 +50,12 @@ public class CheatActivity extends Activity {
                 setAnswerShownResults(true);
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        Log.i(TAG, "onSaveInstanceState");
+        savedInstanceState.putString(ANSWER_VIEW, mAnswerTextView.getText().toString());
     }
 }
