@@ -10,9 +10,6 @@ import android.widget.TextView;
 
 public class CheatActivity extends Activity {
     private static final String TAG = "CheatActivity";
-    private static final String ANSWER_VIEW = "answer_view";
-
-
     public static final String EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geoquiz.answer_is_true";
     public static final String EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown";
 
@@ -30,6 +27,7 @@ public class CheatActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate() called");
         setContentView(R.layout.activity_cheat);
 
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
@@ -50,12 +48,5 @@ public class CheatActivity extends Activity {
                 setAnswerShownResults(true);
             }
         });
-    }
-
-    @Override
-    public void onSaveInstanceState(Bundle savedInstanceState) {
-        super.onSaveInstanceState(savedInstanceState);
-        Log.i(TAG, "onSaveInstanceState");
-        savedInstanceState.putString(ANSWER_VIEW, mAnswerTextView.getText().toString());
     }
 }
