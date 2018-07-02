@@ -60,8 +60,8 @@ public class CheatActivity2 extends Activity {
                 } else {
                     mAnswerTextView.setText(R.string.false_button);
                 }
-                setAnswerShownResult(true);// the answer was seen
-                mIsCheater = true;// the user cheated
+                setAnswerShownResult(true);
+                mIsCheater = true;
             }
         });
     }
