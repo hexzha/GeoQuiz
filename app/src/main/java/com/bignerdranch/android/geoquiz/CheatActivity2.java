@@ -9,9 +9,7 @@ import android.widget.TextView;
 
 public class CheatActivity2 extends Activity {
     public static final String EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geoquiz.answer_is_true";
-    // variable name string for the status of having shown the answer on savedInstantState issuance
     public static final String EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown";
-    // variable name string for the status of whether the user cheated
     public static final String KEY_CHEATER = "cheater";
 
     private boolean mAnswerIsTrue;
@@ -30,20 +28,20 @@ public class CheatActivity2 extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
 
-        if (savedInstanceState != null) {// if there was a savedInstanceState issuance
-            setAnswerShownResult(savedInstanceState.getBoolean(KEY_CHEATER, false));// was the answer displayed before savedInstanceState if so forward that on
-            mIsCheater = savedInstanceState.getBoolean(KEY_CHEATER);// did the user cheat before savedInstanceState
-            mAnswerIsTrue = savedInstanceState.getBoolean(EXTRA_ANSWER_IS_TRUE, false);// was the answer to the ? cheated on true
+        if (savedInstanceState != null) {
+            setAnswerShownResult(savedInstanceState.getBoolean(KEY_CHEATER, false));
+            mIsCheater = savedInstanceState.getBoolean(KEY_CHEATER);
+            mAnswerIsTrue = savedInstanceState.getBoolean(EXTRA_ANSWER_IS_TRUE, false);
             mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
-            if ((mAnswerIsTrue == true) && (mIsCheater == true)) {// if the answer was true, and it was viewed(cheated)
-                mAnswerTextView.setText(R.string.true_button);// then display it again
-            } else if ((mAnswerIsTrue == false) && (mIsCheater == true)) {//if the answer was false, and it was viewed(cheated)
-                mAnswerTextView.setText(R.string.false_button);// display it again
+            if ((mAnswerIsTrue == true) && (mIsCheater == true)) {
+                mAnswerTextView.setText(R.string.true_button);
+            } else if ((mAnswerIsTrue == false) && (mIsCheater == true)) {
+                mAnswerTextView.setText(R.string.false_button);
             }
 
-        } else {// no savedInstanceState
-            mIsCheater = false;// they haven't cheated yet
-            setAnswerShownResult(false);// they haven't seen the answer yet
+        } else {
+            mIsCheater = false;
+            setAnswerShownResult(false);
         }
 
 
@@ -69,7 +67,7 @@ public class CheatActivity2 extends Activity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);// save the cheat status of the user onSaveInstanceState issuance
-        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);// get whether ? was True/false onSaveInstanceState issuance
+        savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);
+        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);
     }
 }
