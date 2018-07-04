@@ -12,9 +12,10 @@ public class CheatActivity extends Activity {
     private static final String TAG = "CheatActivity";
     public static final String EXTRA_ANSWER_IS_TRUE = "com.bignerdranch.android.geoquiz.answer_is_true";
     public static final String EXTRA_ANSWER_SHOWN = "com.bignerdranch.android.geoquiz.answer_shown";
+    public static final String KEY_CHEATER = "cheater";
 
     private boolean mAnswerIsTrue;
-
+    private boolean mIsCheater;
     private TextView mAnswerTextView;
     private Button mShowAnswer;
 
@@ -34,6 +35,7 @@ public class CheatActivity extends Activity {
 
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
 
+        mIsCheater = false;
         setAnswerShownResults(false);
 
         mShowAnswer = (Button) findViewById(R.id.showAnswerButton);
@@ -46,7 +48,15 @@ public class CheatActivity extends Activity {
                     mAnswerTextView.setText(R.string.false_button);
                 }
                 setAnswerShownResults(true);
+                mIsCheater = true;
             }
         });
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        super.onSaveInstanceState(savedInstanceState);
+        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);
+        savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);
     }
 }
