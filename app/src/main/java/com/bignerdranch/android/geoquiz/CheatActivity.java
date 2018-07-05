@@ -20,6 +20,7 @@ public class CheatActivity extends Activity {
     private Boolean mIsCheater;
 
     private void setAnswerShownResults(boolean isAnswerShown) {
+        Log.d(TAG, "setAnswerShownResults() called");
         Intent data = new Intent();
         data.putExtra(EXTRA_ANSWER_SHOWN, isAnswerShown);
         setResult(RESULT_OK, data);
@@ -55,6 +56,7 @@ public class CheatActivity extends Activity {
 
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
+        Log.d(TAG, "onSaveInstanceState() called");
         super.onSaveInstanceState(savedInstanceState);
         savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);
         savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);
