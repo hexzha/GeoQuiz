@@ -15,9 +15,9 @@ public class CheatActivity extends Activity {
     public static final String KEY_CHEATER = "cheater";
 
     private boolean mAnswerIsTrue;
-    private boolean mIsCheater;
     private TextView mAnswerTextView;
     private Button mShowAnswer;
+    private Boolean mIsCheater;
 
     private void setAnswerShownResults(boolean isAnswerShown) {
         Intent data = new Intent();
@@ -27,8 +27,8 @@ public class CheatActivity extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate() called");
+        super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
 
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
@@ -56,7 +56,7 @@ public class CheatActivity extends Activity {
     @Override
     public void onSaveInstanceState(Bundle savedInstanceState) {
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);
         savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);
+        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);
     }
 }
