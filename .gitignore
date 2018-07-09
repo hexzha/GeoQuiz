@@ -42,9 +42,9 @@ build/
 captures/
 output.json 
 
-#NDK
+# NDK
 obj/
 .externalNativeBuild
 
-#Book Code
+# Book Code
 AndroidProgramming
