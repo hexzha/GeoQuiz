@@ -12,4 +12,4 @@ I am following lessons from "Android Programming: The Big Nerd Ranch Guide" 2nd 
 
 ### Websites
 
-Android Programming: BigNerdRanch ebsite: https://www.bignerdranch.com/books/android-programming/
+Android Programming: BigNerdRanch Guide Website: https://www.bignerdranch.com/books/android-programming/
