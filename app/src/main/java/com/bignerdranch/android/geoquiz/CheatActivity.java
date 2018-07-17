@@ -37,9 +37,9 @@ public class CheatActivity extends Activity {
             setAnswerShownResults(savedInstanceState.getBoolean(KEY_CHEATER, false));
             mAnswerIsTrue = savedInstanceState.getBoolean(EXTRA_ANSWER_IS_TRUE, false);
             mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
-            if (mAnswerIsTrue && mIsCheater) {
+            if (mAnswerIsTrue == true && mIsCheater == true) {
                 mAnswerTextView.setText("True");
-            } else if (!mAnswerIsTrue && mIsCheater) {
+            } else if (mAnswerIsTrue == false && mIsCheater == true) {
                 mAnswerTextView.setText("False");
             }
         } else {
@@ -68,7 +68,7 @@ public class CheatActivity extends Activity {
     public void onSaveInstanceState(Bundle savedInstanceState) {
         Log.d(TAG, "onSaveInstanceState() called");
         super.onSaveInstanceState(savedInstanceState);
-        savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);
-        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);
+        savedInstanceState.putBoolean(KEY_CHEATER, mIsCheater);// save the cheat status of the user onSaveInstanceState issuance
+        savedInstanceState.putBoolean(EXTRA_ANSWER_IS_TRUE, mAnswerIsTrue);// get whether ? was True/false onSaveInstanceState issuance
     }
 }
