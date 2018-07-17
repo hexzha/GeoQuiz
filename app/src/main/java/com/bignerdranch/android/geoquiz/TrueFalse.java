@@ -2,12 +2,21 @@ package com.bignerdranch.android.geoquiz;
 
 public class TrueFalse {
     private int mQuestion;
-
     private boolean mTrueQuestion;
+    private boolean mCheated;
 
     public TrueFalse(int question, boolean trueQuestion) {
         mQuestion = question;
         mTrueQuestion = trueQuestion;
+        mCheated = false;
+    }
+
+    public boolean getCheating() {
+        return mCheated;
+    }
+
+    public void isCheater() {
+        mCheated = true;
     }
 
     public int getQuestion() {
