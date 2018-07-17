@@ -52,7 +52,6 @@ public class CheatActivity2 extends Activity {
 
             @Override
             public void onClick(View arg0) {
-
                 if (mAnswerIsTrue) {
                     mAnswerTextView.setText(R.string.true_button);
                 } else {

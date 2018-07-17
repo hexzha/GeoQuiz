@@ -18,7 +18,7 @@ public class CheatActivity extends Activity {
     private TextView mAnswerTextView;
     private Button mShowAnswer;
     private Boolean mIsCheater;
-    
+
 
     private void setAnswerShownResults(boolean isAnswerShown) {
         Log.d(TAG, "setAnswerShownResults() called");
@@ -33,13 +33,22 @@ public class CheatActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cheat);
 
+        if (savedInstanceState != null) {
+            setAnswerShownResults(savedInstanceState.getBoolean(KEY_CHEATER, false));
+            mAnswerIsTrue = savedInstanceState.getBoolean(EXTRA_ANSWER_IS_TRUE, false);
+            mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
+            if (mAnswerIsTrue && mIsCheater) {
+                mAnswerTextView.setText("True");
+            } else if (!mAnswerIsTrue && mIsCheater) {
+                mAnswerTextView.setText("False");
+            }
+        } else {
+            mIsCheater = false;
+            setAnswerShownResults(false);
+        }
+
         mAnswerIsTrue = getIntent().getBooleanExtra(EXTRA_ANSWER_IS_TRUE, false);
-
         mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
-
-        mIsCheater = false;
-        setAnswerShownResults(false);
-
         mShowAnswer = (Button) findViewById(R.id.showAnswerButton);
         mShowAnswer.setOnClickListener(new View.OnClickListener() {
             @Override
