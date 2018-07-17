@@ -18,6 +18,7 @@ public class CheatActivity extends Activity {
     private TextView mAnswerTextView;
     private Button mShowAnswer;
     private Boolean mIsCheater;
+    
 
     private void setAnswerShownResults(boolean isAnswerShown) {
         Log.d(TAG, "setAnswerShownResults() called");
