@@ -15,7 +15,7 @@ public class TrueFalse {
         return mCheated;
     }
 
-    public void isCheater() {
+    public void setCheater() {
         mCheated = true;
     }
 

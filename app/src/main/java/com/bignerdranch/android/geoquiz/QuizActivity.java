@@ -37,7 +37,9 @@ public class QuizActivity extends Activity {
         if (data == null) {
             return;
         }
-        mIsCheater = data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false);
+        if(data.getBooleanExtra(CheatActivity.EXTRA_ANSWER_SHOWN, false)) {
+            mQuestionBank[mCurrentIndex].setCheater();
+        }
     }
 
     private void updateQuestion() {
