@@ -37,9 +37,9 @@ public class CheatActivity extends Activity {
             setAnswerShownResults(savedInstanceState.getBoolean(KEY_CHEATER, false));
             mAnswerIsTrue = savedInstanceState.getBoolean(EXTRA_ANSWER_IS_TRUE, false);
             mAnswerTextView = (TextView) findViewById(R.id.answerTextView);
-            if (mAnswerIsTrue == true && mIsCheater == true) {
+            if (mAnswerIsTrue && mIsCheater) {
                 mAnswerTextView.setText("True");
-            } else if (mAnswerIsTrue == false && mIsCheater == true) {
+            } else if (!mAnswerIsTrue && mIsCheater) {
                 mAnswerTextView.setText("False");
             }
         } else {
