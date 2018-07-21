@@ -42,8 +42,8 @@ public class QuizActivity extends Activity {
     }
 
     private void updateQuestion() {
-        int quesiton = mQuestionBank[mCurrentIndex].getQuestion();
-        mQuestionTextView.setText(quesiton);
+        int question = mQuestionBank[mCurrentIndex].getQuestion();
+        mQuestionTextView.setText(question);
     }
 
     private void checkAnswer(boolean userPressedTrue) {
