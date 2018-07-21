@@ -30,7 +30,6 @@ public class QuizActivity extends Activity {
     };
 
     private int mCurrentIndex = 0;
-    private boolean mIsCheater;
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -52,7 +51,7 @@ public class QuizActivity extends Activity {
 
         int messageResId = 0;
 
-        if (mIsCheater) {
+        if (mQuestionBank[mCurrentIndex].getCheating()) {
             messageResId = R.string.judgement_toast;
         } else {
             if (userPressedTrue == answerIsTrue) {
@@ -96,7 +95,6 @@ public class QuizActivity extends Activity {
             @Override
             public void onClick(View v) {
                 mCurrentIndex = (mCurrentIndex + 1) % mQuestionBank.length;
-                mIsCheater = false;
                 updateQuestion();
             }
         });
