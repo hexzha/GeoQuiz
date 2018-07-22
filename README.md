@@ -6,5 +6,6 @@ GeoQuiz is a simple android application that displays a series of geographical t
 This is my first android app . I have used Android Studio to create this app. Within the app,I try to explore fundementals of android projects, layouts, and explicit intents. 
 I am following lessons from "Android Programming: The Big Nerd Ranch Guide" 2nd edition by Bill Phillips, Chris Stewart, Brian Hardy and Kristin Marsicano. 
 
-### Websites
+### Website
+s
 Android Programming: BigNerdRanch Website: https://www.bignerdranch.com/books/android-programming/
