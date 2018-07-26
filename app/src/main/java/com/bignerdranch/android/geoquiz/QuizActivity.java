@@ -47,13 +47,13 @@ public class QuizActivity extends Activity {
     }
 
     private void checkAnswer(boolean userPressedTrue) {
-        boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
-
         int messageResId = 0;
 
         if (mQuestionBank[mCurrentIndex].getCheating()) {
             messageResId = R.string.judgement_toast;
         } else {
+            boolean answerIsTrue = mQuestionBank[mCurrentIndex].isTrueQuestion();
+
             if (userPressedTrue == answerIsTrue) {
                 messageResId = R.string.correct_toast;
             } else {
