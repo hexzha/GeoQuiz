@@ -1,4 +1,4 @@
-# GeoQuiz
+## GeoQuiz
 ### Description
 GeoQuiz is a simple android application that displays a series of geographical true/false questions. A toast indicates whether the user has answered correctly. A cheating feature is also implemented to allow the user to get the answer. 
 
